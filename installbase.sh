@@ -1,5 +1,5 @@
 #!/bin/bash 
-echo "Installing base things..."
+echo "Installing base things, and ypdating the system to latest release..."
 systemctl stop firewalld
 systemctl disable firewalld
 sleep 5
@@ -7,21 +7,16 @@ yum clean all
 yum install screen http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-9.noarch.rpm -y
 screen -m yum install expect mosh yum-plugin-remove-with-leaves yum-plugin-show-leaves yum-utils mlocate nano iperf3 traceroute net-tools git zip unzip http://li.nux.ro/download/nux/dextop/el6/i386/screenie-1.30.0-5.el6.nux.noarch.rpm -y
 yum clean all
-echo "Updating the system to latest release"
 sleep 5
 screen -m yum update -y
-echo "Installing Apache + PHP + MOD_SSL + XCache"
-sleep 5
-screen -m yum install httpd mod_ssl php php-gd php-pear php-xcache xcache-admin -y
-mkdir /etc/httpd/sites-available
-mkdir /etc/httpd/sites-enabled
-systemctl start httpd
-systemctl enable httpd
-cd /etc/httpd/sites-available
-wget https://raw.githubusercontent.com/technofab/newcentos7/master/example.com.conf
-screen yum install python-certbot-apache -y
-clear
-echo "Ending first phase. If you also MySQL do:"
-echo "wget -O - https://raw.githubusercontent.com/technofab/newcentos7/master/installmysql.sh | bash"
-echo "else refer to general-management.md on newcentos7 on technofab github repository."
+echo "Ending first phase."
+echo "If you need Apache httpd do:"
+echo "wget https://raw.githubusercontent.com/technofab/newcentos7/master/installhttpd.sh
+echo "chmod 755 installhttpd.sh"
+echo "./installhttpd.sh"
+echo " "
+echo "If you need MySQL Database do:"
+echo "wget https://raw.githubusercontent.com/technofab/newcentos7/master/installmysql.sh
+echo "chmod 755 installmysql.sh"
+echo "./installmysql.sh"
 sleep 5
