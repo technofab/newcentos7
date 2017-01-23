@@ -1,5 +1,4 @@
-
-
+#!/bin/bash 
 cd /usr/bin
 wget https://raw.githubusercontent.com/technofab/newcentos7/master/createdb
 chmod 755 createdb
@@ -29,9 +28,9 @@ expect eof
 ")
 echo "$SECURE_MYSQL"
 sleep 3
-echo "To add a DB with an user with full access use this command: createmysql"
+echo "To add a DB with an user with full access use this command: createdb"
 echo "In the example below, testdb is the name of the database"
 echo "testuser is the user, and password is the user’s password."
 echo " "
-echo "createmysql testdb testuser password"
+echo "createdb testdb testuser password"
 sleep 3
