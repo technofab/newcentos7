@@ -18,3 +18,4 @@ wget https://raw.githubusercontent.com/technofab/newcentos7/master/example.com.c
 yum install python-certbot-apache
 echo "If you need MySQL do:"
 echo "wget -O - https://raw.githubusercontent.com/technofab/newcentos7/master/installmysql.sh | bash"
+sleep 3
