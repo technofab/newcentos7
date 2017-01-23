@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "Installing Apache + PHP + MOD_SSL + XCache"
 sleep 5
 screen -m yum install httpd mod_ssl php php-gd php-pear php-xcache xcache-admin -y
