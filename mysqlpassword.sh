@@ -8,14 +8,18 @@ yum install mariadb-server mariadb -y
 systemctl enable mariadb
 systemctl start mariadb
 echo "Installing MySQL using as root password for mysql ABCD1234efgh!"
-MYSQL_ROOT_PASSWORD=ABCD1234efgh!
+MYSQL_ROOT_PASSWORD=carciofo
 SECURE_MYSQL=$(expect -c "
 set timeout 10
 spawn mysql_secure_installation
 expect \"Enter current password for root (enter for none):\"
 send \"$MYSQL\r\"
 expect \"Change the root password?\"
-send \"n\r\"
+send \"y\r\"
+expect \"New password:\"
+send \"$MYSQL_ROOT_PASSWORD\r\"
+expect \"Re-enter new password:\"
+send \"$MYSQL_ROOT_PASSWORD\r\"
 expect \"Remove anonymous users?\"
 send \"y\r\"
 expect \"Disallow root login remotely?\"
