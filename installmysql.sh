@@ -4,7 +4,7 @@ wget https://raw.githubusercontent.com/technofab/newcentos7/master/createdb
 chmod 755 createdb
 cd ~
 echo "Installing MySQL"
-yum install mariadb-server mariadb
+yum install mariadb-server mariadb -y
 systemctl enable mariadb
 systemctl start mariadb
 echo "Installing MySQL using as root password for mysql ABCD1234efgh!"
