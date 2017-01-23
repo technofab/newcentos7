@@ -4,10 +4,10 @@ After a fresh installation of CentOS 7, act as root and next do the following co
 
 yum clean all; yum install wget -y
 
-wget https://raw.githubusercontent.com/technofab/newcentos7/master/installbase.sh 
+wget https://raw.githubusercontent.com/technofab/newcentos7/master/setup.sh 
 
-chmod 755 installbase.sh
+chmod 755 setup.sh
 
-./installbase.sh
+./setup.sh
 
-For general managemento of this custom installation, please refer to general-management.md on this repository
+For general managemento of this custom installation, please refer to general-management.md on this repository.
