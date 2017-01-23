@@ -7,8 +7,8 @@ echo "Installing MySQL"
 yum install mariadb-server mariadb -y
 systemctl enable mariadb
 systemctl start mariadb
-echo "Installing MySQL using as root password for mysql ABCD1234efgh!"
-MYSQL_ROOT_PASSWORD=carciofo
+echo "Installing MySQL using as root password for mysql --> ab1234CD"
+MYSQL_ROOT_PASSWORD=ab1234CD
 SECURE_MYSQL=$(expect -c "
 set timeout 10
 spawn mysql_secure_installation
