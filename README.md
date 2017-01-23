@@ -10,6 +10,8 @@ chmod 755 installbase.sh
 
 ./installbase.sh
 
+or execute
+
 wget -O - https://raw.githubusercontent.com/technofab/newcentos7/master/setup.sh | bash
 
-For general managemento of this custom installation, please refer to general-management.md on this repository.
+For general managemento of this custom installation, please refer to general-management.md on this repository
