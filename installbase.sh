@@ -16,7 +16,7 @@ systemctl start httpd
 systemctl enable httpd
 cd /etc/httpd/sites-available
 wget https://raw.githubusercontent.com/technofab/newcentos7/master/example.com.conf
-yum install python-certbot-apache
+yum install python-certbot-apache -y
 echo "If you also MySQL do:"
 echo "wget -O - https://raw.githubusercontent.com/technofab/newcentos7/master/installmysql.sh | bash"
 echo "else refer to general-management.md on newcentos7 on technofab github repository."
