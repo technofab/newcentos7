@@ -56,6 +56,32 @@ else
 fi
 }
 
+postbasic(){
+dialog --clear --backtitle "$sottotitolo" --menu \
+  "Fai la tua scelta per cortesia:" 0 0 0 \
+A "Install Apache httpd" \
+M "Install MySQL database" 2>tmpscelta
+
+if [ "$?" = "0" ]
+then
+	_return=$(cat tmpscelta)
+	if [ "$_return" = "I" ]
+        then
+		basicfunctions
+        fi
+	if [ "$_return" = "A" ]
+        then
+		apachehttpd
+        fi
+	if [ "$_return" = "M" ]
+        then
+		mysqldatabase
+        fi
+else
+	uscita
+fi
+}
+
 installa_wget()
 {
 dialog --title "$titolo" --backtitle "$sottotitolo" --yesno "Install wget package?" 5 35
@@ -82,6 +108,7 @@ cd /root
 wget https://raw.githubusercontent.com/technofab/newcentos7/master/installbase.sh 
 chmod 755 installbase.sh
 /root/installbase.sh
+postbasic
 exit
 }
 
