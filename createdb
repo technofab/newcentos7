@@ -4,6 +4,12 @@ EXPECTED_ARGS=3
 E_BADARGS=65
 MYSQL=`which mysql`
 
+if [ $# -ne $EXPECTED_ARGS ]
+then
+  echo "Usage: $0 dbname dbuser dbpass"
+  exit $E_BADARGS
+fi
+
 $MYSQL -uroot -p<<MYSQL_SCRIPT
 CREATE DATABASE IF NOT EXISTS $1;
 CREATE USER '$2'@'localhost' IDENTIFIED BY '$3';
@@ -11,14 +17,14 @@ GRANT ALL PRIVILEGES ON $1.* TO $2@localhost;
 FLUSH PRIVILEGES;
 MYSQL_SCRIPT
 
-if [ $# -ne $EXPECTED_ARGS ]
-then
-  echo "Usage: $0 dbname dbuser dbpass"
-  exit $E_BADARGS
+OUT=$?
+if [ $OUT -eq 1 ];then
+   echo "MySQL Password is incorrect! Please provide right password."
+   exit 100
+else
+   echo "MySQL user and DB created."
+   echo "Database:   $1"
+   echo "Username:   $2"
+   echo "Password:   $3"
+   sleep 1
 fi
-
-echo "MySQL user and DB created."
-echo "Database:   $1"
-echo "Username:   $2"
-echo "Password:   $3"
-sleep 1
