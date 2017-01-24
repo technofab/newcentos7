@@ -5,7 +5,7 @@ systemctl disable firewalld
 sleep 5
 yum clean all
 yum install screen http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-9.noarch.rpm -y
-screen -m yum install bind-utils find utils expect mosh yum-plugin-remove-with-leaves yum-plugin-show-leaves yum-utils mlocate nano iperf3 traceroute net-tools git zip unzip http://li.nux.ro/download/nux/dextop/el6/i386/screenie-1.30.0-5.el6.nux.noarch.rpm -y
+screen -m yum install bind-utils findutils expect mosh yum-plugin-remove-with-leaves yum-plugin-show-leaves yum-utils mlocate nano iperf3 traceroute net-tools git zip unzip https://raw.githubusercontent.com/technofab/newcentos7/master/screenie-1.30.0-5.el6.nux.noarch.rpm -y
 yum clean all
 sleep 5
 screen -m yum update -y
