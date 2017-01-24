@@ -12,7 +12,12 @@ data="24/01/2017"
 titolo="newcentos7 $versione"
 sottotitolo="newcentos7 version $versione of $data"
 
-# ************ Funzioni varie **************
+# ************ Core routine **************
+
+if which dialog >/dev/null; 
+	then
+        yum install dialog -y
+fi
 
 pausa(){
    read -p "$*"
@@ -88,15 +93,12 @@ echo routine mysql
 exit
 }
 
-
-
-
-# ******** Fine funzioni varie ********
+# ************ Core routine **************
 
 # Inizio script
 dialog --title "$titolo" --backtitle "$sottotitolo" --msgbox "Welcome to $titolo" 5 33
 
-# Verifica utente usato e presenza fsarchiver
+# Verifying if the user is root and wget is installed
 
 if [ $UID != 0 ]
     then
@@ -111,4 +113,3 @@ else
         dialog --clear --backtitle "$sottotitolo" --msgbox "KO wget package is missing!" 5 60
         installa_wget
 fi
-
