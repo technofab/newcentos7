@@ -53,7 +53,7 @@ else
 fi
 }
 
-installa_fsarchiver()
+installa_wget()
 {
 dialog --title "$titolo" --backtitle "$sottotitolo" --yesno "Vuoi installare fsarchiver?" 5 35
 case $? in
@@ -104,11 +104,11 @@ if [ $UID != 0 ]
         exit 1
 fi
 
-if which dfsarchiver >/dev/null; then
-        dialog --clear --backtitle "$sottotitolo" --msgbox "Verifica prerequisiti OK: pacchetto fsarchiver presente." 5 60
+if which wget >/dev/null; then
+        dialog --clear --backtitle "$sottotitolo" --msgbox "OK wget package is installed!" 5 60
 	scelta_operazione
 else
-        dialog --clear --backtitle "$sottotitolo" --msgbox "Verifica prerequisiti KO: pacchetto fsarchiver mancante." 5 60
-        installa_fsarchiver
+        dialog --clear --backtitle "$sottotitolo" --msgbox "KO wget package is missing!" 5 60
+        installa_wget
 fi
 
