@@ -31,7 +31,7 @@ uscita()
 
 scelta_operazione(){
 dialog --clear --backtitle "$sottotitolo" --menu \
-  "Fai la tua scelta per cortesia:" 0 0 0 \
+  "Please, make your choice:" 0 0 0 \
 I "Install basic functions" \
 A "Install Apache httpd" \
 M "Install MySQL database" 2>tmpscelta
@@ -58,7 +58,7 @@ fi
 
 postbasic(){
 dialog --clear --backtitle "$sottotitolo" --menu \
-  "Fai la tua scelta per cortesia:" 0 0 0 \
+  "Please, make your choice:" 0 0 0 \
 A "Install Apache httpd" \
 M "Install MySQL database" 2>tmpscelta
 
@@ -102,7 +102,6 @@ esac
 basicfunctions()
 {
 # Routine loading basic functions
-echo routine basic
 yum clean all; yum install wget -y
 cd /root
 wget https://raw.githubusercontent.com/technofab/newcentos7/master/installbase.sh 
