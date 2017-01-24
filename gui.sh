@@ -9,7 +9,7 @@
 # Variabili iniziali
 versione="0.1b"
 data="24/01/2017"
-titolo="RPi Backup $versione"
+titolo="newcentos7 $versione"
 sottotitolo="newcentos7 version $versione of $data"
 
 # ************ Funzioni varie **************
@@ -94,13 +94,13 @@ exit
 # ******** Fine funzioni varie ********
 
 # Inizio script
-dialog --title "$titolo" --backtitle "$sottotitolo" --msgbox "Benvenuto in $titolo" 5 33
+dialog --title "$titolo" --backtitle "$sottotitolo" --msgbox "Welcome to $titolo" 5 33
 
 # Verifica utente usato e presenza fsarchiver
 
 if [ $UID != 0 ]
     then
-        dialog --clear --backtitle "$sottotitolo" --msgbox  "Questo script deve  essere utilizzato solo come utente root." 6 70
+        dialog --clear --backtitle "$sottotitolo" --msgbox  "This script must be ran as root user." 6 70
         exit 1
 fi
 
