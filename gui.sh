@@ -115,14 +115,24 @@ exit
 apachehttpd()
 {
 # Routine loading and install Apache httpd
-echo routine httpd
+yum clean all; yum install wget -y
+cd /root
+wget https://raw.githubusercontent.com/technofab/newcentos7/master/installhttpd.sh 
+chmod 755 installhttpd.sh
+/root/installhttpd.sh
+postbasic
 exit
 }
 
 mysqldatabase()
 {
 # Routine loading and install MySQL
-echo routine mysql
+yum clean all; yum install wget -y
+cd /root
+wget https://raw.githubusercontent.com/technofab/newcentos7/master/installmysql.sh 
+chmod 755 installmysql.sh
+/root/installmysql.sh
+postbasic
 exit
 }
 
