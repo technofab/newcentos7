@@ -31,7 +31,7 @@ uscita()
 
 scelta_operazione(){
 dialog --clear --backtitle "$sottotitolo" --menu \
-  "Please, make your choice:" 0 0 0 \
+  "Please, make your choice, or ESC to exit:" 0 0 0 \
 I "Install basic functions" \
 A "Install Apache httpd" \
 M "Install MySQL database" 2>tmpscelta
@@ -58,7 +58,7 @@ fi
 
 postbasic(){
 dialog --clear --backtitle "$sottotitolo" --menu \
-  "Please, make your choice:" 0 0 0 \
+  "Please, make your choice, or ESC to exit:" 0 0 0 \
 A "Install Apache httpd" \
 M "Install MySQL database" 2>tmpscelta
 
