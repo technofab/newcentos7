@@ -20,7 +20,7 @@ pausa(){
 
 uscita()
 {
-	dialog --clear --backtitle "$sottotitolo" --msgbox "Uscita dal programma come chiesto!" 6 45
+	dialog --clear --backtitle "$sottotitolo" --msgbox "Exiting from the program!" 6 45
 	rm tmpscelta
 	clear
 	exit
@@ -31,22 +31,22 @@ dialog --clear --backtitle "$sottotitolo" --menu \
   "Fai la tua scelta per cortesia:" 0 0 0 \
 I "Install basic functions" \
 A "Install Apache httpd" \
-M "Install MySQL database"2>tmpscelta
+M "Install MySQL database" 2>tmpscelta
 
 if [ "$?" = "0" ]
 then
 	_return=$(cat tmpscelta)
 	if [ "$_return" = "I" ]
         then
-		salvataggio
+		basicfunctions
         fi
 	if [ "$_return" = "A" ]
         then
-		ripristino
+		apachehttpd
         fi
 	if [ "$_return" = "M" ]
         then
-		ripristino
+		mysqldatabase
         fi
 else
 	uscita
@@ -67,19 +67,29 @@ esac
 # uscita
 }
 
-salvataggio()
+basicfunctions()
 {
-# Routine Salvataggio completo: salvataggio MBR + Tabella partizioni + Filesystem partizioni
-echo routine salvataggio
+# Routine loading basic functions
+echo routine basic
 exit
 }
 
-ripristino()
+apachehttpd()
 {
-# Routine Ripristino: MBR + Tabella partizioni + Filesystem partizioni
-echo routine ripristino
+# Routine loading and install Apache httpd
+echo routine httpd
 exit
 }
+
+mysqldatabase()
+{
+# Routine loading and install MySQL
+echo routine mysql
+exit
+}
+
+
+
 
 # ******** Fine funzioni varie ********
 
