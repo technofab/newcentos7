@@ -14,10 +14,8 @@ sottotitolo="newcentos7 version $versione of $data"
 
 # ************ Core routine **************
 
-if which dialog >/dev/null; 
-	then
-        yum install dialog -y
-fi
+echo "Loading....."
+yum install dialog -y -q
 
 pausa(){
    read -p "$*"
