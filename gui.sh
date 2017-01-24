@@ -62,10 +62,11 @@ dialog --title "$titolo" --backtitle "$sottotitolo" --yesno "Install wget packag
 case $? in
 0)
 echo "Installing wget package"
-yum install dialog -y -q
+yum install wget -y -q
+scelta_operazione
 ;;
 1)
-echo "wget package is a requisite for working this script"
+dialog --clear --backtitle "$sottotitolo" --msgbox  "wget package is a requisite for working this script" 6 70
 uscita
 ;;
 esac
