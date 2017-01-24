@@ -58,12 +58,14 @@ fi
 
 installa_wget()
 {
-dialog --title "$titolo" --backtitle "$sottotitolo" --yesno "Vuoi installare fsarchiver?" 5 35
+dialog --title "$titolo" --backtitle "$sottotitolo" --yesno "Install wget package?" 5 35
 case $? in
 0)
-echo "ottimo"
+echo "Installing wget package"
+yum install dialog -y -q
 ;;
 1)
+echo "wget package is a requisite for working this script"
 uscita
 ;;
 esac
@@ -74,6 +76,11 @@ basicfunctions()
 {
 # Routine loading basic functions
 echo routine basic
+yum clean all; yum install wget -y
+cd /root
+wget https://raw.githubusercontent.com/technofab/newcentos7/master/installbase.sh 
+chmod 755 installbase.sh
+/root/installbase.sh
 exit
 }
 
