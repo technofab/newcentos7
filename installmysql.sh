@@ -37,4 +37,4 @@ echo "In the example below, testdb is the name of the database"
 echo "testuser is the user, and password is the user’s password."
 echo " "
 echo "createdb testdb testuser password"
-sleep 3
+sleep 15
