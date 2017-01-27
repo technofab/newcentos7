@@ -104,9 +104,9 @@ basicfunctions()
 # Routine loading basic functions
 yum clean all; yum install wget -y
 cd /root
-wget https://raw.githubusercontent.com/technofab/newcentos7/master/installbase.sh 
-chmod 755 installbase.sh
-/root/installbase.sh
+# wget https://raw.githubusercontent.com/technofab/newcentos7/master/installbase.sh 
+chmod 755 ./installbase.sh
+./installbase.sh
 postbasic
 exit
 }
@@ -116,9 +116,9 @@ apachehttpd()
 # Routine loading and install Apache httpd
 yum clean all; yum install wget -y
 cd /root
-wget https://raw.githubusercontent.com/technofab/newcentos7/master/installhttpd.sh 
-chmod 755 installhttpd.sh
-/root/installhttpd.sh
+# wget https://raw.githubusercontent.com/technofab/newcentos7/master/installhttpd.sh 
+chmod 755 ./installhttpd.sh
+./installhttpd.sh
 postbasic
 exit
 }
@@ -128,9 +128,9 @@ mysqldatabase()
 # Routine loading and install MySQL
 yum clean all; yum install wget -y
 cd /root
-wget https://raw.githubusercontent.com/technofab/newcentos7/master/installmysql.sh 
-chmod 755 installmysql.sh
-/root/installmysql.sh
+# wget https://raw.githubusercontent.com/technofab/newcentos7/master/installmysql.sh 
+chmod 755 ./installmysql.sh
+./installmysql.sh
 postbasic
 exit
 }
